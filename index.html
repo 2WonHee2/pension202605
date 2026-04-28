@@ -5,11 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>은퇴식 숙소 후보 비교</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Gowun+Dodum&display=swap" rel="stylesheet">
   <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
   <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
-<body>
+<body style="font-family: 'Gowun Dodum', sans-serif;">
   <div id="root"></div>
 
   <script type="text/babel">
@@ -325,7 +328,7 @@ function App() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-3 md:p-6">
       <div className="mx-auto max-w-5xl overflow-hidden">
         <div className="mb-5 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70 md:mb-8 md:p-7">
-          <h1 className="mt-2 text-3xl font-black text-slate-900 md:text-4xl">숙소 비교</h1>
+          <h1 className="mt-2 text-3xl font-black text-slate-900 md:text-4xl">은퇴식 숙소</h1>
           <p className="mt-3 text-sm font-semibold text-blue-500">※ 표시된 금액은 조회 당시 기준(2026.04.28 21:00)이며, 예약 시점 및 사이트에 따라 변동될 수 있습니다</p>
           <p className="mt-3 text-sm text-slate-600 md:text-base">아래 숙소를 클릭하면 정보를 확인할 수 있습니다</p>
         </div>
@@ -337,7 +340,7 @@ function App() {
               <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-orange-50 to-rose-100" />
               <div className="absolute inset-0 bg-black/35" />
               <div className="relative z-10 flex h-full items-center justify-center">
-                <span className="text-base font-black text-white drop-shadow-lg md:text-2xl">{stay.city}</span>
+                <span className="text-base font-semibold text-white drop-shadow-lg md:text-2xl tracking-wide">{stay.city}</span>
               </div>
             </button>
           ))}
