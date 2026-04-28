@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>은퇴식 숙소 후보 비교</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+const { useState } = React;
+
+const stays = {
+  pension1: {
+    city: "숙소1",
+    title: "강화도 저어새펜션",
+    subtitle: "금화조",
+    images: [
+      "https://drive.google.com/thumbnail?id=131AknBMe9ExgyJWjuaWUgT1C2dg9O6LO&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1XPMuTnALluINMfccEy_b-cuPIoyXlwU4&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1MqJl8gT1L6EMSYXOg72wxlZioCDI6bu3&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1YF7wL2U-5Xf209CoNvdzxL9o3cVvS_Oy&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1W_HK36ciElYWPyh-CRW5WPqFZFMKYKxl&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1gBrJuSW17lbPEYXD1FrboOoiuGAmonFo&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1hl6VahRFR42yXN2Fq8VRZdM87qOh8QoA&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1UcW9HSm231MZTl-Jha-fTtIXMFTrzUgt&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1X7KEeK1lyC111e9R4eP_h0OpdYfKZeqB&sz=w1200",
+      "https://drive.google.com/thumbnail?id=17byxTDOUY1R8SkA-gc_OlPmI6jSlZW-V&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1vLjfmM3SnsdNZbm5XtKKGbY2foIBpid4&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1cEqJs4sge6384gYp9jcJZk4RRE2NtVTD&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1Xmo45-ZFhhCoCQ8zOtQgEMasgx5_IjzX&sz=w1200",
+      "https://drive.google.com/thumbnail?id=101Vt1Xtf3cD8Pp3WiKsq9SA2fn4_IOQF&sz=w1200",
+      "https://drive.google.com/thumbnail?id=1tjuF93xJUtyM5q4fWXZnJklYfz3_Z7qL&sz=w1200"
+    ],
+    location: "인천광역시 강화군 화도면 해안남로 2099 (저어새펜션)",
+    price: "365,000원",
+    people: "기준 5명(310,000원) + 추가 1명(20,000원)",
+    bbq: {
+      time: "21시까지",
+      summaryPrice: "기본 (20,000원) + 추가 3명(15,000원)",
+      price: "기본 20,000원, 4인이상은 인당 5천원씩 추가",
+      note: "개인 그릴이나 숯등은 반입금지"
+    },
+    notes: ["족구장, 탁구장 있음"],
+    services: ["야외수영장", "오션뷰", "금연객실", "복층구조", "해수욕장 인근", "와이파이", "흡연구역", "기본양념", "매점/편의점", "탁구장", "족구장", "취사가능", "개별바베큐", "주차가능", "전기차충전"],
+    link: "https://nol.yanolja.com/stay/domestic/10064187?checkInDate=2026-05-15&checkOutDate=2026-05-16",
+  },
+  pension2: {
+    city: "숙소2",
+    title: "숙소 2",
+    subtitle: "숙소2",
+    images: [],
+    location: "부산 / 해운대",
+    price: "1박 220,000원",
+    people: "8명 기준",
+    bbq: { time: "17:00 ~ 21:00", summaryPrice: "1팀 25,000원", price: "1팀 25,000원", note: "사전 예약 필요" },
+    notes: ["바다 근처", "단체 모임 분위기 좋음", "사진 찍기 좋음", "성수기 가격 변동 있음"],
+    services: ["오션뷰", "와이파이", "주차가능", "개별바베큐", "취사가능"],
+    link: "https://nol.yanolja.com/stay/domestic/10064187?checkInDate=2026-05-15&checkOutDate=2026-05-16",
+  },
+  pension3: {
+    city: "숙소3",
+    title: "숙소 3",
+    subtitle: "숙소3",
+    images: [],
+    location: "제주 / 애월",
+    price: "1박 250,000원",
+    people: "8명 기준",
+    bbq: { time: "18:00 ~ 23:00", summaryPrice: "1팀 40,000원", price: "1팀 40,000원", note: "개별 테라스 바베큐 가능" },
+    notes: ["뷰가 좋음", "조용한 분위기", "단체 숙박 가능"],
+    services: ["야외수영장", "오션뷰", "주차가능", "복층구조", "개별바베큐"],
+    link: "https://nol.yanolja.com/stay/domestic/10064187?checkInDate=2026-05-15&checkOutDate=2026-05-16",
+  },
+};
+
+function PhotoAlbum({ stay }) {
+  const [isOpen, setIsOpen] = useState(false);
+  const [selectedImage, setSelectedImage] = useState(null);
+  const placeholders = ["대표 사진", "실내 사진", "객실 사진", "수영장/마당", "전망 사진"];
+  const albumItems = placeholders.map((label, index) => ({ label, src: stay.images?.[index] || null }));
+  const allImageItems = stay.images?.length ? stay.images.map((src, index) => ({ label: `사진 ${index + 1}`, src })) : albumItems;
+
+  return (
+    <div className="grid h-auto gap-2 md:h-[420px] md:gap-3 md:grid-cols-2">
+      <div className="h-64 overflow-hidden rounded-t-3xl bg-gradient-to-br from-blue-100 via-sky-50 to-indigo-100 md:h-auto md:rounded-l-3xl md:rounded-tr-none">
+        {albumItems[0].src ? <img src={albumItems[0].src} alt={albumItems[0].label} className="h-full w-full object-cover" /> :
+          <div className="flex h-full items-center justify-center text-3xl font-black text-slate-600">{stay.title}</div>}
+      </div>
+
+      <div className="grid grid-cols-2 gap-2 md:gap-3">
+        {albumItems.slice(1).map((item, idx) => (
+          <div key={idx} className="relative h-28 overflow-hidden bg-slate-100 last:rounded-br-3xl first:rounded-tr-none md:h-auto md:first:rounded-tr-3xl">
+            {item.src ? <img src={item.src} alt={item.label} className="h-full w-full object-cover" /> :
+              <div className="flex h-full items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-sm font-bold text-slate-500">{item.label}</div>}
+            {idx === 3 && (
+              <button onClick={() => { setSelectedImage(allImageItems[0]); setIsOpen(true); }}
+                className="absolute bottom-2 right-2 rounded-full bg-white px-3 py-2 text-xs font-bold text-slate-800 shadow-lg transition hover:scale-105 md:bottom-4 md:right-4 md:px-4 md:text-sm">
+                🖼️ 전체 사진 보기
+              </button>
+            )}
+          </div>
+        ))}
+      </div>
+
+      {isOpen && (
+        <div className="fixed inset-0 z-50 flex items-start justify-center overflow-y-auto bg-black/70 p-3 md:p-6" onClick={() => setIsOpen(false)}>
+          <div className="mt-4 mb-4 max-w-5xl w-full rounded-3xl bg-white p-4 md:p-6" onClick={(e) => e.stopPropagation()}>
+            <div className="mb-4 flex items-center justify-between">
+              <h3 className="text-2xl font-black text-slate-900">전체 사진 보기</h3>
+              <button onClick={() => setIsOpen(false)} className="rounded-xl bg-slate-100 px-4 py-2 font-bold">닫기</button>
+            </div>
+
+            <div className="mb-6 overflow-hidden rounded-3xl bg-slate-100">
+              {selectedImage?.src ? <img src={selectedImage.src} alt={selectedImage.label} className="h-[280px] w-full object-contain bg-black md:h-[500px]" /> :
+                <div className="flex h-[280px] items-center justify-center text-2xl font-bold text-slate-500 md:h-[500px]">사진을 선택하세요</div>}
+            </div>
+
+            <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
+              {allImageItems.map((item, idx) => (
+                <div key={idx} onClick={() => setSelectedImage(item)}
+                  className={`h-20 md:h-28 cursor-pointer overflow-hidden rounded-2xl bg-slate-100 border-4 transition ${selectedImage?.label === item.label ? "border-blue-500" : "border-transparent"}`}>
+                  {item.src ? <img src={item.src} alt={item.label} className="h-full w-full object-cover" /> :
+                    <div className="flex h-full items-center justify-center text-sm font-bold text-slate-500">{item.label}</div>}
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+function StayCard({ stay }) {
+  return (
+    <div className="mt-5 rounded-3xl bg-white p-4 shadow-xl shadow-slate-200/70 md:mt-8 md:p-6">
+      <PhotoAlbum stay={stay} />
+
+      <div className="mt-5 grid gap-5 md:mt-7 md:gap-6 md:grid-cols-[1fr_0.9fr]">
+        <div>
+          <h2 className="text-2xl font-black text-slate-900 md:text-3xl">🏨 {stay.title}</h2>
+          <p className="mt-3 text-xl font-semibold text-slate-600 md:text-2xl">객실 : {stay.subtitle}</p>
+          <button type="button" onClick={() => {
+            const a = document.createElement("a");
+            a.href = stay.link;
+            a.target = "_blank";
+            a.rel = "noopener noreferrer";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+          }} className="mt-4 inline-block rounded-2xl bg-blue-500 px-4 py-2 text-sm font-bold text-white shadow-lg transition hover:scale-105 md:px-5 md:py-3 md:text-base">
+            숙소 사이트로 이동 →
+          </button>
+        </div>
+
+        <div className="rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700 md:p-5 md:text-base md:leading-7">
+          <div className="flex items-center gap-2">📍 위치: {stay.location}</div>
+          <div className="mt-3 flex items-center gap-2">👥 숙소비용: {stay.people}</div>
+          <div className="mt-3 flex items-center gap-2">🔥 바베큐 금액: {stay.bbq.summaryPrice}</div>
+          <div className="mt-3 flex items-center gap-2">⭐ 총 가격(1박): {stay.price}</div>
+        </div>
+      </div>
+
+      <div className="mt-6">
+        <div className="mb-5 rounded-2xl bg-rose-50 p-4 md:p-5">
+          <h3 className="font-bold text-rose-700">바베큐 시설</h3>
+          <div className="mt-3 space-y-2 text-sm text-slate-700 md:text-base">
+            <div>🕒 이용 시간: {stay.bbq.time}</div>
+            <div>💰 이용 금액: {stay.bbq.price}</div>
+            <div>📝 참고 사항: {stay.bbq.note}</div>
+          </div>
+        </div>
+
+        <div className="mb-5 rounded-2xl bg-slate-50 p-4 md:p-5">
+          <h3 className="font-bold text-slate-800">시설/서비스</h3>
+          <div className="mt-4 grid grid-cols-2 gap-y-3 text-sm text-slate-700 md:grid-cols-4 md:text-base">
+            {stay.services.map((item) => <div key={item} className="flex items-center gap-2"><span>✓</span><span>{item}</span></div>)}
+          </div>
+        </div>
+
+        <div className="rounded-2xl bg-amber-50 p-4 md:p-5">
+          <h3 className="font-bold text-amber-700">특이사항</h3>
+          <ul className="mt-3 space-y-2 text-sm text-slate-700 md:text-base">
+            {stay.notes.map((item) => <li key={item}>• {item}</li>)}
+          </ul>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function App() {
+  const [selected, setSelected] = useState("pension1");
+  const current = stays[selected];
+
+  return (
+    <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-3 md:p-6">
+      <div className="mx-auto max-w-5xl overflow-hidden">
+        <div className="mb-5 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70 md:mb-8 md:p-7">
+          <h1 className="mt-2 text-3xl font-black text-slate-900 md:text-4xl">은퇴식</h1>
+          <p className="mt-3 text-sm font-semibold text-blue-500">은퇴식 숙소 후보 비교</p>
+          <p className="mt-3 text-sm text-slate-600 md:text-base">아래 숙소를 클릭하면 정보를 확인할 수 있습니다</p>
+        </div>
+
+        <div className="grid grid-cols-3 gap-2 md:gap-5">
+          {Object.entries(stays).map(([key, stay]) => (
+            <button key={key} onClick={() => setSelected(key)}
+              className={`group relative h-24 overflow-hidden rounded-2xl border-2 text-left shadow-lg transition hover:scale-[1.02] md:h-32 md:rounded-3xl ${selected === key ? "border-blue-500 ring-4 ring-blue-100" : "border-transparent"}`}>
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-sky-100 to-indigo-200" />
+              <div className="absolute inset-0 bg-black/35" />
+              <div className="relative z-10 flex h-full items-center justify-center">
+                <span className="text-2xl font-black text-white drop-shadow-lg md:text-4xl">{stay.city}</span>
+              </div>
+            </button>
+          ))}
+        </div>
+
+        <StayCard stay={current} />
+      </div>
+    </main>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+  </script>
+</body>
+</html>
