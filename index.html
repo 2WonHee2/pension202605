@@ -17,73 +17,174 @@ const { useState } = React;
 
 const stays = {
   pension1: {
-    city: "숙소1",
+    city: "화도1",
     title: "강화도 저어새펜션",
     subtitle: "금화조",
     images: [
-      "https://drive.google.com/thumbnail?id=131AknBMe9ExgyJWjuaWUgT1C2dg9O6LO&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1XPMuTnALluINMfccEy_b-cuPIoyXlwU4&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1MqJl8gT1L6EMSYXOg72wxlZioCDI6bu3&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1YF7wL2U-5Xf209CoNvdzxL9o3cVvS_Oy&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1W_HK36ciElYWPyh-CRW5WPqFZFMKYKxl&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1gBrJuSW17lbPEYXD1FrboOoiuGAmonFo&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1hl6VahRFR42yXN2Fq8VRZdM87qOh8QoA&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1UcW9HSm231MZTl-Jha-fTtIXMFTrzUgt&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1X7KEeK1lyC111e9R4eP_h0OpdYfKZeqB&sz=w1200",
-      "https://drive.google.com/thumbnail?id=17byxTDOUY1R8SkA-gc_OlPmI6jSlZW-V&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1vLjfmM3SnsdNZbm5XtKKGbY2foIBpid4&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1cEqJs4sge6384gYp9jcJZk4RRE2NtVTD&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1Xmo45-ZFhhCoCQ8zOtQgEMasgx5_IjzX&sz=w1200",
-      "https://drive.google.com/thumbnail?id=101Vt1Xtf3cD8Pp3WiKsq9SA2fn4_IOQF&sz=w1200",
-      "https://drive.google.com/thumbnail?id=1tjuF93xJUtyM5q4fWXZnJklYfz3_Z7qL&sz=w1200"
+      "./pension_image/pension1/main.jpeg",
+      "./pension_image/pension1/1.jpg",
+      "./pension_image/pension1/2.jpg",
+      "./pension_image/pension1/3.jpg",
+      "./pension_image/pension1/4.jpg",
+      "./pension_image/pension1/5.jpg",
+      "./pension_image/pension1/6.jpg",
+      "./pension_image/pension1/7.jpg",
+      "./pension_image/pension1/8.jpg",
+      "./pension_image/pension1/9.jpg",
+      "./pension_image/pension1/10.jpg",
+      "./pension_image/pension1/11.jpg",
+      "./pension_image/pension1/12.jpg",
+      "./pension_image/pension1/13.jpg",
+      "./pension_image/pension1/14.jpg"
     ],
-    location: "인천광역시 강화군 화도면 해안남로 2099 (저어새펜션)",
+    location: "인천광역시 강화군 화도면 해안남로 2099",
     price: "365,000원",
     people: "기준 5명(310,000원) + 추가 1명(20,000원)",
+    checkIn: "15:00",
+    checkOut: "11:00",
     bbq: {
       time: "21시까지",
-      summaryPrice: "기본 (20,000원) + 추가 3명(15,000원)",
+      summaryPrice: "기본 3명(20,000원) + 추가 3명(15,000원)",
       price: "기본 20,000원, 4인이상은 인당 5천원씩 추가",
       note: "개인 그릴이나 숯등은 반입금지"
     },
-    notes: ["족구장, 탁구장 있음"],
-    services: ["야외수영장", "오션뷰", "금연객실", "복층구조", "해수욕장 인근", "와이파이", "흡연구역", "기본양념", "매점/편의점", "탁구장", "족구장", "취사가능", "개별바베큐", "주차가능", "전기차충전"],
+    notes: ["편의점이 20시에 닫음","객실내 흡연 불가능(지정 장소에서 해야함)","약 35평"],
+    services: ["오션뷰", "금연객실", "해수욕장 인근", "와이파이", "흡연구역", "매점/편의점", "탁구장", "족구장", "취사가능", "개별바베큐", "주차가능", "전기차충전"],
     link: "https://nol.yanolja.com/stay/domestic/10064187?checkInDate=2026-05-15&checkOutDate=2026-05-16",
   },
+
+
+  
   pension2: {
-    city: "숙소2",
-    title: "숙소 2",
-    subtitle: "숙소2",
-    images: [],
-    location: "부산 / 해운대",
-    price: "1박 220,000원",
-    people: "8명 기준",
-    bbq: { time: "17:00 ~ 21:00", summaryPrice: "1팀 25,000원", price: "1팀 25,000원", note: "사전 예약 필요" },
-    notes: ["바다 근처", "단체 모임 분위기 좋음", "사진 찍기 좋음", "성수기 가격 변동 있음"],
-    services: ["오션뷰", "와이파이", "주차가능", "개별바베큐", "취사가능"],
-    link: "https://nol.yanolja.com/stay/domestic/10064187?checkInDate=2026-05-15&checkOutDate=2026-05-16",
+    city: "화도2",
+    title: "강화 아라 펜션",
+    subtitle: "석양(3층)",
+    images: [
+      "./pension_image/pension2/1.webp",
+      "./pension_image/pension2/2.webp",
+      "./pension_image/pension2/3.webp",
+      "./pension_image/pension2/4.webp",
+      "./pension_image/pension2/5.webp",
+      "./pension_image/pension2/6.webp",
+      "./pension_image/pension2/7.webp",
+      "./pension_image/pension2/8.webp",
+      "./pension_image/pension2/9.webp",
+      "./pension_image/pension2/10.webp"
+    ],
+    location: "인천광역시 강화군 화도면 장화리 519-20",
+    price: "292,000원",
+    people: "기본 4명(222,000원) + 추가 2명(30,000원)",
+    checkIn: "15:00",
+    checkOut: "11:00",
+    bbq: { time: "21시까지", summaryPrice: "기본 2명(20,000원) + 추가 4명(20,000원)", price: "2인 기준 20,000원 (1인 추가 5,000원) (1박기준/현장결제)", note: "숯, 그릴 개인 지참 불가" },
+    notes: ["침대가 없음","30평"],
+    services: ["바베큐", "TV", "욕실용품", "에어컨", "냉장고", "드라이기", "편의점 :도보3분", "주차장", "전자레인지"],
+    link: "https://www.yeogi.com/domestic-accommodations/60415?checkIn=2026-05-15&checkOut=2026-05-16&personal=6&searchKeyword=%EC%9D%B8%EC%B2%9C%20%EA%B0%95%ED%99%94%EA%B5%B0",
   },
+
+
+  
   pension3: {
-    city: "숙소3",
-    title: "숙소 3",
-    subtitle: "숙소3",
-    images: [],
-    location: "제주 / 애월",
-    price: "1박 250,000원",
-    people: "8명 기준",
-    bbq: { time: "18:00 ~ 23:00", summaryPrice: "1팀 40,000원", price: "1팀 40,000원", note: "개별 테라스 바베큐 가능" },
-    notes: ["뷰가 좋음", "조용한 분위기", "단체 숙박 가능"],
-    services: ["야외수영장", "오션뷰", "주차가능", "복층구조", "개별바베큐"],
-    link: "https://nol.yanolja.com/stay/domestic/10064187?checkInDate=2026-05-15&checkOutDate=2026-05-16",
+    city: "화도3",
+    title: "강화도 숲속의오후펜션",
+    subtitle: "2동 카나리아",
+    images: [
+      "./pension_image/pension3/1.jpg",
+      "./pension_image/pension3/2.jpg",
+      "./pension_image/pension3/3.jpg",
+      "./pension_image/pension3/4.jpg",
+      "./pension_image/pension3/5.jpg",
+      "./pension_image/pension3/6.jpg",
+      "./pension_image/pension3/7.jpg"
+    ],
+    location: "인천광역시 강화군 화도면 해안남로 2166-61",
+    price: "290,000원",
+    people: "기본 6명(250,000원)",
+    checkIn: "15:00",
+    checkOut: "11:00",
+    bbq: { time: "22시까지", summaryPrice: "기본 2명(20,000원) + 추가 4명(20,000원)", price: "숯 & 그릴: 2인기준 20,000원 / 1인 추가시 5,000원", note: "특이사항 없음" },
+    notes: ["실내 책상이 매우 작음", "객실내 흡연 불가능(지정 장소에서 해야함)","약 35평"],
+    services: ["야외수영장", "바베큐", "복층구조", "주차가능", "와이파이", "족구장"],
+    link: "https://nol.yanolja.com/stay/domestic/10066508?adultCount=6&checkInDate=2026-05-15&checkOutDate=2026-05-16&srpKeyword=%EA%B0%95%ED%99%94%EB%8F%84",
+  },
+
+
+
+  pension4: {
+    city: "선원1",
+    title: "강화도 설탕이네",
+    subtitle: "설탕이네",
+    images: [
+      "./pension_image/pension4/0.png",
+      "./pension_image/pension4/1.jpg",
+      "./pension_image/pension4/2.jpg",
+      "./pension_image/pension4/3.jpg",
+      "./pension_image/pension4/4.jpg",
+      "./pension_image/pension4/5.jpg",
+      "./pension_image/pension4/6.jpg",
+      "./pension_image/pension4/7.jpg",
+      "./pension_image/pension4/8.jpg",
+      "./pension_image/pension4/9.jpg",
+      "./pension_image/pension4/10.jpg",
+      "./pension_image/pension4/11.jpg"
+    ],
+    location: "인천광역시 강화군 선원면 와말길 257-19",
+    price: "410,000원 + α(바베큐 추가인원 비용)",
+    people: "기본 4명(350,000원) + 추가 2명 (40,000원)",
+    checkIn: "15:00",
+    checkOut: "11:00",
+    bbq: { time: "미기재 ", summaryPrice: "기본 4명(20,000원) + α", price: "숯+그릴 (숯2봉지) : 20,000원 / 4인 기준", note: "불멍: 장작 15kg+오로라 가루+고체 연료 / 20,000원" },
+    notes: ["선원면사무소 근처임", "객실내 흡연 불가능(지정 장소에서 해야함)"],
+    services: ["파티가능", "풀빌라", "금연객실", "불멍", "개별바베큐", "독채펜션", "와이파이", "주차가능", "상비약", "복층구조", "흡연구역", "노래방", "취사가능", "전기차충전"],
+    link: "https://nol.yanolja.com/stay/domestic/10068004?adultCount=6&checkInDate=2026-05-15&checkOutDate=2026-05-16&srpKeyword=%EA%B0%95%ED%99%94%EB%8F%84+%EC%84%A0%EC%9B%90%EB%A9%B4",
+  },
+
+  
+  pension5: {
+    city: "선원2",
+    title: "강화도 하늘토끼",
+    subtitle: "하늘토끼 독채",
+    images: [
+      "./pension_image/pension5/1.jpg",
+      "./pension_image/pension5/2.jpg",
+      "./pension_image/pension5/3.jpg",
+      "./pension_image/pension5/4.jpg",
+      "./pension_image/pension5/5.jpg",
+      "./pension_image/pension5/6.jpg"
+    ],
+    location: "인천광역시 강화군 선원면 중앙로 448-44",
+    price: "400,000원 + α(장작 추가비용)",
+    people: "기본 6명(380,000원)",
+    checkIn: "15:00",
+    checkOut: "11:00",
+    bbq: {
+      time: "22시30분",
+      summaryPrice: "20,000원",
+      price: "숯+화로 이용 : 1회 20,000원",
+      note: "기본제공 외 장작 추가시 10kg당 10,000원 (한망 단위), 현장결제"
+    },
+    notes: ["1층(20평), 2층(13평)", "객실내 흡연 불가능(지정 장소에서 해야함)"],
+    services: ["불멍", "주차가능", "독채펜션", "주방", "유료세탁", "금연객실", "계곡인접", "복층구조", "와이파이", "개별바베큐"],
+    link: "https://nol.yanolja.com/stay/domestic/10059551?adultCount=6&checkInDate=2026-05-15&checkOutDate=2026-05-16&srpKeyword=%EA%B0%95%ED%99%94%EB%8F%84+%EC%84%A0%EC%9B%90%EB%A9%B4"
   },
 };
 
+    
+
 function PhotoAlbum({ stay }) {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(0);
   const placeholders = ["대표 사진", "실내 사진", "객실 사진", "수영장/마당", "전망 사진"];
   const albumItems = placeholders.map((label, index) => ({ label, src: stay.images?.[index] || null }));
   const allImageItems = stay.images?.length ? stay.images.map((src, index) => ({ label: `사진 ${index + 1}`, src })) : albumItems;
+  const selectedImage = allImageItems[selectedIndex] || allImageItems[0];
+  const movePhoto = (direction) => {
+    setSelectedIndex((prev) => {
+      const total = allImageItems.length;
+      if (!total) return 0;
+      return (prev + direction + total) % total;
+    });
+  };
 
   return (
     <div className="grid h-auto gap-2 md:h-[420px] md:gap-3 md:grid-cols-2">
@@ -98,7 +199,7 @@ function PhotoAlbum({ stay }) {
             {item.src ? <img src={item.src} alt={item.label} className="h-full w-full object-cover" /> :
               <div className="flex h-full items-center justify-center bg-gradient-to-br from-slate-100 to-slate-200 text-sm font-bold text-slate-500">{item.label}</div>}
             {idx === 3 && (
-              <button onClick={() => { setSelectedImage(allImageItems[0]); setIsOpen(true); }}
+              <button onClick={() => { setSelectedIndex(0); setIsOpen(true); }}
                 className="absolute bottom-2 right-2 rounded-full bg-white px-3 py-2 text-xs font-bold text-slate-800 shadow-lg transition hover:scale-105 md:bottom-4 md:right-4 md:px-4 md:text-sm">
                 🖼️ 전체 사진 보기
               </button>
@@ -115,14 +216,35 @@ function PhotoAlbum({ stay }) {
               <button onClick={() => setIsOpen(false)} className="rounded-xl bg-slate-100 px-4 py-2 font-bold">닫기</button>
             </div>
 
-            <div className="mb-6 overflow-hidden rounded-3xl bg-slate-100">
+            <div className="relative mb-6 overflow-hidden rounded-3xl bg-slate-100">
               {selectedImage?.src ? <img src={selectedImage.src} alt={selectedImage.label} className="h-[280px] w-full object-contain bg-black md:h-[500px]" /> :
                 <div className="flex h-[280px] items-center justify-center text-2xl font-bold text-slate-500 md:h-[500px]">사진을 선택하세요</div>}
+
+              {allImageItems.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={() => movePhoto(-1)}
+                    className="absolute left-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/45 text-3xl font-black text-white shadow-lg transition hover:scale-110 hover:bg-black/65 md:left-5 md:h-14 md:w-14"
+                    aria-label="이전 사진"
+                  >
+                    ‹
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => movePhoto(1)}
+                    className="absolute right-3 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/40 bg-black/45 text-3xl font-black text-white shadow-lg transition hover:scale-110 hover:bg-black/65 md:right-5 md:h-14 md:w-14"
+                    aria-label="다음 사진"
+                  >
+                    ›
+                  </button>
+                </>
+              )}
             </div>
 
             <div className="grid grid-cols-2 gap-4 md:grid-cols-5">
               {allImageItems.map((item, idx) => (
-                <div key={idx} onClick={() => setSelectedImage(item)}
+                <div key={idx} onClick={() => setSelectedIndex(idx)}
                   className={`h-20 md:h-28 cursor-pointer overflow-hidden rounded-2xl bg-slate-100 border-4 transition ${selectedImage?.label === item.label ? "border-blue-500" : "border-transparent"}`}>
                   {item.src ? <img src={item.src} alt={item.label} className="h-full w-full object-cover" /> :
                     <div className="flex h-full items-center justify-center text-sm font-bold text-slate-500">{item.label}</div>}
@@ -160,6 +282,7 @@ function StayCard({ stay }) {
 
         <div className="rounded-2xl bg-slate-50 p-4 text-sm leading-6 text-slate-700 md:p-5 md:text-base md:leading-7">
           <div className="flex items-center gap-2">📍 위치: {stay.location}</div>
+          <div className="mt-3 flex items-center gap-2">🕒 입실: {stay.checkIn} / 퇴실: {stay.checkOut}</div>
           <div className="mt-3 flex items-center gap-2">👥 숙소비용: {stay.people}</div>
           <div className="mt-3 flex items-center gap-2">🔥 바베큐 금액: {stay.bbq.summaryPrice}</div>
           <div className="mt-3 flex items-center gap-2">⭐ 총 가격(1박): {stay.price}</div>
@@ -176,18 +299,18 @@ function StayCard({ stay }) {
           </div>
         </div>
 
-        <div className="mb-5 rounded-2xl bg-slate-50 p-4 md:p-5">
-          <h3 className="font-bold text-slate-800">시설/서비스</h3>
-          <div className="mt-4 grid grid-cols-2 gap-y-3 text-sm text-slate-700 md:grid-cols-4 md:text-base">
-            {stay.services.map((item) => <div key={item} className="flex items-center gap-2"><span>✓</span><span>{item}</span></div>)}
-          </div>
-        </div>
-
-        <div className="rounded-2xl bg-amber-50 p-4 md:p-5">
+        <div className="mb-5 rounded-2xl bg-amber-50 p-4 md:p-5">
           <h3 className="font-bold text-amber-700">특이사항</h3>
           <ul className="mt-3 space-y-2 text-sm text-slate-700 md:text-base">
             {stay.notes.map((item) => <li key={item}>• {item}</li>)}
           </ul>
+        </div>
+
+        <div className="rounded-2xl bg-slate-50 p-4 md:p-5">
+          <h3 className="font-bold text-slate-800">시설/서비스</h3>
+          <div className="mt-4 grid grid-cols-2 gap-y-3 text-sm text-slate-700 md:grid-cols-4 md:text-base">
+            {stay.services.map((item) => <div key={item} className="flex items-center gap-2"><span>✓</span><span>{item}</span></div>)}
+          </div>
         </div>
       </div>
     </div>
@@ -202,19 +325,19 @@ function App() {
     <main className="min-h-screen bg-gradient-to-br from-slate-50 to-blue-50 p-3 md:p-6">
       <div className="mx-auto max-w-5xl overflow-hidden">
         <div className="mb-5 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70 md:mb-8 md:p-7">
-          <h1 className="mt-2 text-3xl font-black text-slate-900 md:text-4xl">은퇴식</h1>
-          <p className="mt-3 text-sm font-semibold text-blue-500">은퇴식 숙소 후보 비교</p>
+          <h1 className="mt-2 text-3xl font-black text-slate-900 md:text-4xl">은퇴식 숙소</h1>
+          <p className="mt-3 text-sm font-semibold text-blue-500">※ 표시된 금액은 조회 당시 기준(2026.04.28 21:00)이며, 예약 시점 및 사이트에 따라 변동될 수 있습니다</p>
           <p className="mt-3 text-sm text-slate-600 md:text-base">아래 숙소를 클릭하면 정보를 확인할 수 있습니다</p>
         </div>
 
-        <div className="grid grid-cols-3 gap-2 md:gap-5">
+        <div className="grid grid-cols-2 gap-3 md:grid-cols-5 md:gap-4">
           {Object.entries(stays).map(([key, stay]) => (
             <button key={key} onClick={() => setSelected(key)}
-              className={`group relative h-24 overflow-hidden rounded-2xl border-2 text-left shadow-lg transition hover:scale-[1.02] md:h-32 md:rounded-3xl ${selected === key ? "border-blue-500 ring-4 ring-blue-100" : "border-transparent"}`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-200 via-sky-100 to-indigo-200" />
+              className={`group relative h-20 overflow-hidden rounded-2xl border-2 text-left shadow-lg transition hover:scale-[1.02] md:h-24 md:rounded-3xl ${selected === key ? "border-blue-500 ring-4 ring-blue-100" : "border-transparent"}`}>
+              <div className="absolute inset-0 bg-gradient-to-br from-amber-100 via-orange-50 to-rose-100" />
               <div className="absolute inset-0 bg-black/35" />
               <div className="relative z-10 flex h-full items-center justify-center">
-                <span className="text-2xl font-black text-white drop-shadow-lg md:text-4xl">{stay.city}</span>
+                <span className="text-lg font-black text-white drop-shadow-lg md:text-2xl">{stay.city}</span>
               </div>
             </button>
           ))}
