@@ -195,7 +195,7 @@ function StaySummaryCard({ stay }) {
     <section className="rounded-3xl bg-white p-4 shadow-xl shadow-slate-200/70 md:p-5">
       <div className="overflow-hidden rounded-3xl bg-slate-100">
         {stay.images?.[0] ? (
-          <img src={stay.images[0]} alt="대표 사진" className="h-[270px] w-full object-cover md:h-[390px]" />
+          <img src={stay.images[0]} alt="대표 사진" className="w-full max-h-[320px] object-contain md:max-h-[390px]" />
         ) : (
           <div className="flex h-[270px] items-center justify-center text-3xl font-black text-slate-600 md:h-[390px]">{stay.title}</div>
         )}
