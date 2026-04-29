@@ -207,11 +207,11 @@ function StaySummaryCard({ stay }) {
         </h2>
       </div>
 
-      <div className="mt-5 divide-y divide-slate-200 border-y border-slate-200 text-sm text-slate-700 md:text-base">
-        <div className="flex gap-3 py-3"><span className="text-xl">📍</span><span>{stay.location}</span></div>
-        <div className="flex gap-3 py-3"><span className="text-xl">👥</span><span>{stay.people}</span></div>
-        <div className="flex gap-3 py-3"><span className="text-xl">🕒</span><span>체크인 {stay.checkIn} ㆍ 체크아웃 {stay.checkOut}</span></div>
-        <div className="flex gap-3 py-3"><span className="text-xl">🔥</span><span>바베큐 {stay.bbq.time} ㆍ {stay.bbq.summaryPrice}</span></div>
+      <div className="mt-5 divide-y divide-slate-200 border-y border-slate-200 text-xs leading-relaxed text-slate-700 md:text-base">
+        <div className="flex gap-2 py-3"><span className="text-lg shrink-0">📍</span><span className="break-words">{stay.location}</span></div>
+        <div className="flex gap-2 py-3"><span className="text-lg shrink-0">👥</span><span className="break-words">{stay.people}</span></div>
+        <div className="flex gap-2 py-3"><span className="text-lg shrink-0">🕒</span><span className="break-words">체크인 {stay.checkIn} · 체크아웃 {stay.checkOut}</span></div>
+        <div className="flex gap-2 py-3"><span className="text-lg shrink-0">🔥</span><span className="break-words">바베큐 {stay.bbq.time} · {stay.bbq.summaryPrice}</span></div>
       </div>
 
       <button type="button" onClick={() => {
@@ -222,7 +222,7 @@ function StaySummaryCard({ stay }) {
         document.body.appendChild(a);
         a.click();
         document.body.removeChild(a);
-      }} className="mt-5 w-full rounded-2xl bg-blue-50 px-5 py-3 text-base font-black text-blue-600 transition hover:scale-[1.01] hover:bg-blue-100 md:text-lg">
+      }} className="mt-5 w-full rounded-2xl bg-blue-50 px-3 py-3 text-sm font-black text-blue-600 transition hover:scale-[1.01] hover:bg-blue-100 md:px-5 md:text-lg">
         🔗 숙소 상세 페이지 보기
       </button>
     </section>
@@ -248,7 +248,7 @@ function PriceTable({ selected }) {
       </div>
 
       <div className="w-full overflow-x-auto rounded-2xl border border-slate-200">
-        <table className="w-full min-w-[650px] border-collapse text-center text-sm md:text-base">
+        <table className="w-full min-w-[560px] border-collapse text-center text-sm md:text-base">
           <thead className="bg-slate-50 text-slate-800">
             <tr>
               <th className="border-b border-r border-slate-200 px-4 py-4">숙소</th>
