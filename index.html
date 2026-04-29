@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>은퇴식 숙소1</title>
+  <title>은퇴식 숙소</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -263,16 +263,16 @@ function PriceTable({ selected }) {
               <tr key={key} className={`${selected === key ? rowColors[key] : "bg-white"}`}>
                 <td className="break-words border-r border-t border-slate-200 px-1 py-4 text-left md:px-4 md:py-5">
                   <div className={`${selected === key ? "text-blue-700" : "text-slate-800"} text-xl font-black`}>{stay.city}</div>
-                  <div className="mt-1 font-bold text-slate-900">{stay.title.replace("강화도 ", "").replace("강화 ", "")}</div>
-                  <div className="mt-1 text-sm text-slate-500">{stay.subtitle}</div>
+                  <div className="mt-1 text-xs font-bold text-slate-900 md:text-base">{stay.title.replace("강화도 ", "").replace("강화 ", "")}</div>
+                  <div className="mt-1 text-[11px] text-slate-500 md:text-sm">{stay.subtitle}</div>
                 </td>
                 <td className="break-words border-r border-t border-slate-200 px-1 py-4 md:px-4 md:py-5">
                   기준 {stay.basePeople} + 추가 {stay.extraPeople}<br />
                   <span className="text-slate-500">({stay.baseFee} + {stay.extraFee})</span>
                 </td>
                 <td className="break-words border-r border-t border-slate-200 px-1 py-4 md:px-4 md:py-5">{stay.lodgingFee}</td>
-                <td className="break-words border-r border-t border-slate-200 px-1 py-4 md:px-4 md:py-5">{stay.bbqFee}</td>
-                <td className="break-words border-t border-slate-200 px-1 py-4 text-sm font-black text-blue-700 md:px-4 md:py-5 md:text-xl">{stay.totalFee}</td>
+                <td className="break-words border-r border-t border-slate-200 px-1 py-4 text-[11px] md:px-4 md:py-5 md:text-base">{stay.bbqFee}</td>
+                <td className="break-words border-t border-slate-200 px-1 py-4 text-xs font-black text-blue-700 md:px-4 md:py-5 md:text-xl">{stay.totalFee}</td>
               </tr>
             ))}
           </tbody>
@@ -324,7 +324,7 @@ function App() {
       <div className="mx-auto w-full max-w-[1400px]">
         <div className="mb-6 rounded-3xl bg-white p-5 shadow-xl shadow-slate-200/70 md:mb-8 md:p-7">
           <h1 className="mt-2 text-3xl font-black text-slate-900 md:text-5xl">은퇴식 숙소</h1>
-          <p className="mt-4 text-sm font-semibold text-blue-500 md:text-base">※ 표시된 금액은 조회 당시 기준(2026.04.28 21:00)이며, 예약 시점 및 사이트에 따라 변동될 수 있습니다</p>
+          <p className="mt-4 text-sm font-semibold text-blue-500 md:text-base">※ 표시된 금액은 조회 당시 기준(2026.04.29 09:00)이며, 예약 시점 및 사이트에 따라 변동될 수 있습니다</p>
           <p className="mt-4 text-sm text-slate-600 md:text-lg">아래 숙소를 클릭하면 정보를 확인할 수 있습니다</p>
         </div>
 
