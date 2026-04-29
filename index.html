@@ -195,7 +195,7 @@ function StaySummaryCard({ stay }) {
     <section className="rounded-3xl bg-white p-4 shadow-xl shadow-slate-200/70 md:p-5">
       <div className="overflow-hidden rounded-3xl bg-slate-100">
         {stay.images?.[0] ? (
-          <img src={stay.images[0]} alt="대표 사진" className="w-full max-h-[320px] object-contain md:max-h-[390px]" />
+          <img src={stay.images[0]} alt="대표 사진" className="block h-auto max-h-[320px] w-full rounded-2xl object-contain md:max-h-[390px]" />
         ) : (
           <div className="flex h-[270px] items-center justify-center text-3xl font-black text-slate-600 md:h-[390px]">{stay.title}</div>
         )}
@@ -247,8 +247,8 @@ function PriceTable({ selected }) {
         <span className="text-sm font-bold text-slate-500 md:text-base">(단위: 원)</span>
       </div>
 
-      <div className="w-full overflow-x-auto rounded-2xl border border-slate-200">
-        <table className="w-full min-w-[560px] border-collapse text-center text-sm md:text-base">
+      <div className="w-full overflow-hidden rounded-2xl border border-slate-200">
+        <table className="w-full table-fixed border-collapse text-center text-[11px] leading-snug md:text-base">
           <thead className="bg-slate-50 text-slate-800">
             <tr>
               <th className="border-b border-r border-slate-200 px-4 py-4">숙소</th>
@@ -261,18 +261,18 @@ function PriceTable({ selected }) {
           <tbody>
             {Object.entries(stays).map(([key, stay]) => (
               <tr key={key} className={`${selected === key ? rowColors[key] : "bg-white"}`}>
-                <td className="border-r border-t border-slate-200 px-4 py-5 text-left">
+                <td className="break-words border-r border-t border-slate-200 px-1 py-4 text-left md:px-4 md:py-5">
                   <div className={`${selected === key ? "text-blue-700" : "text-slate-800"} text-xl font-black`}>{stay.city}</div>
                   <div className="mt-1 font-bold text-slate-900">{stay.title.replace("강화도 ", "").replace("강화 ", "")}</div>
                   <div className="mt-1 text-sm text-slate-500">{stay.subtitle}</div>
                 </td>
-                <td className="border-r border-t border-slate-200 px-4 py-5">
+                <td className="break-words border-r border-t border-slate-200 px-1 py-4 md:px-4 md:py-5">
                   기준 {stay.basePeople} + 추가 {stay.extraPeople}<br />
                   <span className="text-slate-500">({stay.baseFee} + {stay.extraFee})</span>
                 </td>
-                <td className="border-r border-t border-slate-200 px-4 py-5">{stay.lodgingFee}</td>
-                <td className="border-r border-t border-slate-200 px-4 py-5">{stay.bbqFee}</td>
-                <td className="border-t border-slate-200 px-4 py-5 text-xl font-black text-blue-700">{stay.totalFee}</td>
+                <td className="break-words border-r border-t border-slate-200 px-1 py-4 md:px-4 md:py-5">{stay.lodgingFee}</td>
+                <td className="break-words border-r border-t border-slate-200 px-1 py-4 md:px-4 md:py-5">{stay.bbqFee}</td>
+                <td className="break-words border-t border-slate-200 px-1 py-4 text-sm font-black text-blue-700 md:px-4 md:py-5 md:text-xl">{stay.totalFee}</td>
               </tr>
             ))}
           </tbody>
